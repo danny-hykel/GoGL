@@ -242,7 +242,7 @@ func drawShaderInputGUI(state *state) {
 
 // Draw the utility functions GUI.
 func drawUtilityGUI(state *state, data *data) {
-	imgui.Columns(4, "")
+	imgui.Columns()
 	if imgui.Button("	Sphere	") {
 		state.activeModel = data.sphereVerts
 		state.modelRenderer.setData(state.activeModel, state.activeMaterial)
@@ -266,9 +266,9 @@ func drawUtilityGUI(state *state, data *data) {
 		state.modelRenderer.setData(state.activeModel, state.activeMaterial)
 		state.modelRenderer.material.applyUniforms()
 	}
-	imgui.Columns(1, "")
+	imgui.Columns()
 
-	imgui.Columns(4, "")
+	imgui.Columns()
 	imgui.Text("Clear color:")
 	imgui.NextColumn()
 	imgui.SliderFloat("R", &state.clearColorR, 0, 1)
@@ -276,7 +276,7 @@ func drawUtilityGUI(state *state, data *data) {
 	imgui.SliderFloat("G", &state.clearColorG, 0, 1)
 	imgui.NextColumn()
 	imgui.SliderFloat("B", &state.clearColorB, 0, 1)
-	imgui.Columns(1, "")
+	imgui.Columns()
 	imgui.Text("Rotation speed:")
 	imgui.SameLine()
 	imgui.SliderFloat("##rotSpeed", &state.rotationSpeed, 0, 10)
